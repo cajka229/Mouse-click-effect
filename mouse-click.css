@@ -1,0 +1,19 @@
+body{
+    overflow: hidden;
+    cursor: pointer;
+}
+.particle{
+    position:absolute; /* random position of images*/
+    pointer-events:none; /*doesn't turn effects into actual ements on the page, to make sure that clicker works properly*/
+    animation: fly 0.5s forwards ease-out; /*makes the images move away from cursor, 0.5s is time, forwards - away from cursor, ease-out - makes movement faster at first and slower in the end */
+}
+@keyframes fly {
+    from {
+        transform: translate(0, 0) scale(1); /*images start at the cursor position*/
+        opacity: 1; /*visible at first*/
+    }
+    to {
+        transform: translate(var(--dx), var(--dy)) scale(0.5); /*images go to a random direction and become smaller*/
+        opacity: 0; /*become invisible in the end*/
+    }
+}
